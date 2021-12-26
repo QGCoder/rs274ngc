@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: configure
-    
+
     - name: Install packages required for the build
       run: sudo apt -y install -qq devscripts equivs lintian
+    
     - name: Build, install and lint
       run: |
           mk-build-deps -i -s sudo -t "apt --yes --no-install-recommends"
