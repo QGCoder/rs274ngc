@@ -131,7 +131,7 @@ int print_stack)                                  /* option which is ON or OFF *
     for(; ;)
     {
         printf("READ => ");
-        gets(line);
+        fgets(line, RS274NGC_TEXT_SIZE, stdin);
         if (strcmp (line, "quit") IS 0)
             return 0;
         status SET_TO rs274ngc_read(line);
@@ -215,7 +215,7 @@ int print_stack)                                  /* option which is ON or OFF  
                 fprintf(stderr, "starting MDI\n");
                 interpret_from_keyboard(block_delete, print_stack);
                 fprintf(stderr, "continue program? y/n =>");
-                gets(line);
+                fgets(line, RS274NGC_TEXT_SIZE, stdin);
                 if (line[0] ISNT 'y')
                 {
                     status SET_TO 1;
@@ -239,7 +239,7 @@ int print_stack)                                  /* option which is ON or OFF  
                 fprintf(stderr, "starting MDI\n");
                 interpret_from_keyboard(block_delete, print_stack);
                 fprintf(stderr, "continue program? y/n =>");
-                gets(line);
+                fgets(line, RS274NGC_TEXT_SIZE, stdin);
                 if (line[0] ISNT 'y')
                     break;
             }
@@ -301,7 +301,7 @@ char * file_name)                                 /* name of tool file */
     if (file_name[0] IS 0)                        /* ask for name if given name is empty string */
     {
         fprintf(stderr, "name of tool file => ");
-        gets(buffer);
+        fgets(buffer, 1000, stdin);
         tool_file_port SET_TO fopen(buffer, "r");
     }
     else
@@ -373,7 +373,7 @@ int designate_parameter_file(char * file_name)
     FILE * test_port;
 
     fprintf(stderr, "name of parameter file => ");
-    gets(file_name);
+    fgets(file_name, 100, stdin);
     test_port SET_TO fopen(file_name, "r");
     if (test_port IS NULL)
     {
@@ -456,7 +456,7 @@ int * do_next)
                     "3 = continue on error (do not stop or mdi)\n");
         }
         fprintf(stderr, "enter choice => ");
-        gets(buffer);
+        fgets(buffer, 80, stdin);
         if (sscanf(buffer, "%d", &choice) ISNT 1)
             continue;
         if (choice IS 1)
@@ -541,7 +541,7 @@ int * do_next)
 
    */
 
-main (int argc, char ** argv)
+int main (int argc, char ** argv)
 {
     int status;
     int choice;
@@ -580,7 +580,7 @@ main (int argc, char ** argv)
             ((block_delete IS OFF) ? "ON" : "OFF"));
         fprintf(stderr, "5 = adjust error handling...\n");
         fprintf(stderr, "enter choice => ");
-        gets(buffer);
+        fgets(buffer, 80, stdin);
         if (sscanf(buffer, "%d", &choice) ISNT 1)
             continue;
         if (choice IS 1)
@@ -646,6 +646,8 @@ main (int argc, char ** argv)
     rs274ngc_active_settings(sets);               /* called to exercise the function */
     rs274ngc_exit();                              /* saves parameters */
     exit(status);
+
+    return 0;
 }
 
 
