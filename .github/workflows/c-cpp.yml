@@ -17,7 +17,7 @@ jobs:
     - name: Install packages required for the build
       run: sudo apt -y install -qq devscripts equivs lintian
     
-    - name: Build, install and lint
+    - name: Build, install and lintian
       run: |
           mk-build-deps -i -s sudo -t "apt --yes --no-install-recommends"
           debuild --preserve-env --preserve-envvar PATH -i -us -uc -b
