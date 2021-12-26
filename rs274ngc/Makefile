@@ -42,6 +42,8 @@
 COMPILE = g++ -c -v -g
 LINK = g++ -v
 
+all: rs274
+
 canon.o: canon_pre.cc canon.hh
 	$(COMPILE) -o canon.o canon_pre.cc
 
