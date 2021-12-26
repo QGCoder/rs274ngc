@@ -603,7 +603,7 @@ extern void CLAMP_AXIS(CANON_AXIS axis);
    An attempt to move an axis while it is clamped should result in an
    error condition in the controller. */
 
-extern void COMMENT(char *s);
+extern void COMMENT(const char *s);
 
    /* This function has no physical effect. If commands are being printed or
    logged, the comment command is printed or logged, including the string
@@ -619,7 +619,7 @@ extern void FLOOD_OFF();
 extern void FLOOD_ON();
    /* Turn flood coolant on. */
 
-extern void MESSAGE(char *s);
+extern void MESSAGE(const char *s);
 
 extern void MIST_OFF();
    /* Turn mist coolant off. */

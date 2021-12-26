@@ -253,7 +253,7 @@ double end_z
 );
 static int convert_axis_offsets(int g_code, block_pointer block,
 setup_pointer settings);
-static int convert_comment(char * comment);
+static int convert_comment(char const * comment);
 static int convert_control_mode(int g_code, setup_pointer settings);
 static int convert_coordinate_system(int g_code, setup_pointer settings);
 static int convert_cutter_compensation(int g_code, block_pointer block,

@@ -289,7 +289,7 @@ int print_stack)                                  /* option which is ON or OFF  
    */
 
 int read_tool_file(                               /* ARGUMENTS         */
-char * file_name)                                 /* name of tool file */
+const char * file_name)                           /* name of tool file */
 {
     FILE * tool_file_port;
     char buffer[1000];

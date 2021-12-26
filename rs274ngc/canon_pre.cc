@@ -738,7 +738,7 @@ void CLAMP_AXIS(CANON_AXIS axis)
 }
 
 
-void COMMENT(char* s)
+void COMMENT(const char* s)
 {PRINT1("COMMENT(\"%s\")\n", s);}
 
 void DISABLE_FEED_OVERRIDE()
@@ -772,7 +772,7 @@ void INIT_CANON()
 }
 
 
-void MESSAGE(char *s)
+void MESSAGE(const char *s)
 {PRINT1("MESSAGE(\"%s\")\n", s);}
 
 void MIST_OFF()
