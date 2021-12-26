@@ -738,7 +738,7 @@ void CLAMP_AXIS(CANON_AXIS axis)
 }
 
 
-void COMMENT(char *s)
+void COMMENT(char* s)
 {PRINT1("COMMENT(\"%s\")\n", s);}
 
 void DISABLE_FEED_OVERRIDE()

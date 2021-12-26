@@ -39,7 +39,7 @@
 # This Makefile includes code for making six executables out of a
 # possible 29. The others can be made similarly.
 
-COMPILE = g++ -c -v -g
+COMPILE = g++ -c -v -g -Wno-write-strings
 LINK = g++ -v
 
 all: rs274

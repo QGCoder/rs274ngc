@@ -11920,7 +11920,7 @@ repeat--) \
                 break;
             }
    // try for a variable-value match
-            if (sscanf(line, "%d %f", &variable, &value) IS 2)
+            if (sscanf(line, "%d %lf", &variable, &value) IS 2)
             {
                 CHK(((variable <= 0) OR (variable >= RS274NGC_MAX_PARAMETERS)),
                     NCE_PARAMETER_NUMBER_OUT_OF_RANGE);
