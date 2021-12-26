@@ -1,6 +1,5 @@
 rs274ngc (0.0-1) UNRELEASED; urgency=low
 
-  * Initial release. Closes: #nnnn
-    <nnnn is the bug number of your ITP>
+  * Initial release.
 
  -- Jakob Flierl <jakob.flierl@gmail.com>  Sun, 26 Dec 2021 13:15:40 +0100
