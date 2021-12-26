@@ -39,7 +39,7 @@
 # This Makefile includes code for making six executables out of a
 # possible 29. The others can be made similarly.
 #
-prefix = /usr/local
+prefix = /usr
 
 COMPILE = g++ -c
 LINK = g++
