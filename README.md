@@ -1,6 +1,6 @@
 # rs274ngc
 
- Git mirror of the [RS274NGC G-code interpreter](https://code.google.com/archive/p/rs274ngc/).
+ Git mirror of the original NIST [RS274NGC G-code interpreter](https://code.google.com/archive/p/rs274ngc/).
 
 ## About
 
