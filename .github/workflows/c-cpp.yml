@@ -22,6 +22,7 @@ jobs:
           mk-build-deps -i -s sudo -t "apt --yes --no-install-recommends"
           debuild --preserve-env --preserve-envvar PATH -i -us -uc -b
           lintian -v --color auto -I -E --pedantic ../rs274ngc*.changes
+          lintian -I -E --pedantic ../rs274ngc*deb | lintian-info
           sudo dpkg -i ../rs274ngc*deb
           sudo apt -y -f install
           cd ..
