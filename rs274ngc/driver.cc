@@ -24,9 +24,9 @@
 
 #include "rs274ngc.hh"
 #include "rs274ngc_return.hh"
-#include <stdio.h>                                /* gets, etc. */
-#include <stdlib.h>                               /* exit       */
-#include <string.h>                               /* strcpy     */
+#include <stdio.h>                                /* fgets, etc. */
+#include <stdlib.h>                               /* exit        */
+#include <string.h>                               /* strcpy      */
 
 extern CANON_TOOL_TABLE _tools[];                 /* in canon.cc */
 extern int _tool_max;                             /* in canon.cc */
