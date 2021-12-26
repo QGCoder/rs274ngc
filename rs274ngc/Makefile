@@ -94,3 +94,7 @@ rs274_no.o: rs274ngc_pre.cc canon.hh rs274ngc.hh rs274ngc_errors.cc
 
 rs274_no: rs274_no.o canon.o driver.o
 	$(LINK) -o rs274_no rs274_no.o canon.o driver.o -lm
+
+.PHONY: clean
+clean:
+	rm -f *.o rs274 rs274abc rs274ac rs274b rs274_all rs274_no
