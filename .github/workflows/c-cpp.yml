@@ -1,0 +1,26 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install packages required for the build
+      run: sudo apt -y install -qq devscripts equivs lintian
+    
+    - name: Build, install and lint
+      run: |
+          mk-build-deps -i -s sudo -t "apt --yes --no-install-recommends"
+          debuild --preserve-env --preserve-envvar PATH -i -us -uc -b
+          sudo dpkg -i ../rs274ngc*deb
+          sudo apt -y -f install
+          cd ..
