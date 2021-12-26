@@ -1,0 +1,3 @@
+version=3
+https://github.com/QGCoder/rs274ngc/tags .*/(\d[\d\.]*)\.(?:tar.gz|tar.bz2|tar.xz)
+
