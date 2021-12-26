@@ -38,6 +38,8 @@
 
 # This Makefile includes code for making six executables out of a
 # possible 29. The others can be made similarly.
+#
+prefix = /usr/local
 
 COMPILE = g++ -c
 LINK = g++
@@ -95,6 +97,15 @@ rs274_no.o: rs274ngc_pre.cc canon.hh rs274ngc.hh rs274ngc_errors.cc
 rs274_no: rs274_no.o canon.o driver.o
 	$(LINK) -o rs274_no rs274_no.o canon.o driver.o -lm
 
-.PHONY: clean
+install: rs274
+	install -D rs274 $(DESTDIR)$(prefix)/bin/rs274
+
+uninstall:
+	-rm -f $(DESTDIR)$(prefix)/bin/rs274
+
 clean:
-	rm -f *.o rs274 rs274abc rs274ac rs274b rs274_all rs274_no
+	-rm -f *.o rs274 rs274abc rs274ac rs274b rs274_all rs274_no
+
+distclean: clean
+
+.PHONY: all install clean distclean uninstall
